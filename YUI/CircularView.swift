@@ -15,9 +15,9 @@ class CircularView: UIView {
 
     var visiableViews: [UIView] = []  // 队列保存的位置
     
-    var pageCount:   Int = 0
+    var pageCount:  Int = 0
     var firstIndex: Int = -1
-    var lastIndex: Int = -1
+    var lastIndex:  Int = -1
     var generateContentView: (atIndex: Int) -> UIView
     var leftEdgeConstraint: NSLayoutConstraint = NSLayoutConstraint()   // 当前显示 UIView 的 constraint，用于实现手势动画
     var edgeConstraints: [NSLayoutConstraint] = []   // 用于确定队列中 UIView 水平位置的 contraint
@@ -168,7 +168,7 @@ class CircularView: UIView {
     }
 
     // 水平滚动的手势
-    
+    // TODO: 改成 Dynamic 做动画
     func handlePan(gestureRecognizer: UIPanGestureRecognizer) {
         let translation: CGPoint = gestureRecognizer.translationInView(self)
         let fabsX: Float = Float(fabs(translation.x))
